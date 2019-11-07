@@ -2,6 +2,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  
   <style>
     body {
       min-width: 310px;
@@ -17,7 +18,7 @@
   </style>
 </head>
 <body >
-  <h2> Air Polution Monitering </h2>
+  <h2> Air Polution Monitoring </h2>
   <div id="chart-1.0" class="container"></div>
   <div id="chart-2.5" class="container"></div>
   <div id="chart-10.0" class="container"></div>
@@ -25,14 +26,12 @@
 <script>
 var chartT = new Highcharts.Chart({
   chart:{ renderTo : 'chart-1.0'  },
-
   title: { text: ' PM_01 ' },
   series: [{
     showInLegend: false,
     data: []
   }],
   plotOptions: {
-  
     line: { animation: false,
       dataLabels: { enabled: true }
     },
@@ -63,7 +62,7 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/pm1", true);
   xhttp.send();
-}, 1000 ) ;
+}, 3000 ) ;
 
 var chartH = new Highcharts.Chart({
   chart:{ renderTo:'chart-2.5' },
@@ -102,7 +101,7 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/pm2.5", true);
   xhttp.send();
-}, 1000 ) ;
+}, 3000 ) ;
 
 var chartP = new Highcharts.Chart({
   chart:{ renderTo:'chart-10.0' },
@@ -142,6 +141,6 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/pm10", true);
   xhttp.send();
-}, 1000 ) ;
+}, 3000 ) ;
 </script>
 </html>
